@@ -14,23 +14,25 @@ import { ProductHttpHandleErrorServiceComponent } from './product-http-handle-er
 import { ServiceProductImageEventComponent } from './service-product-image-event/service-product-image-event';
 import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail/service-product-image-event-detail';
 import { ProductCatalogComponent } from './product-catalog/product-catalog';
+import { GroupCustomersComponent } from './group-customers/group-customers';
 
 
 const routes: Routes = [
-  {path:"binding-property", component:BindingPropertyComponent},
-  {path:"binding-class", component:BindingClassComponent},
-  {path:"binding-style", component:BindingStyleComponent},
-  {path:"contact", component:ContactComponent},
-  {path:"binding-event", component:BindingEventComponent},
-  {path:"binding-2-way", component:BindingTwoWayComponent},
-  {path:"danh-sach-san-pham", component:ProductListComponent},
-  {path:"product-dropdown-list", component:ProductDropdownListComponent},
-  {path:"product-list-call-service", component:ProductListCallServiceComponent},
-  {path:"product-list-call-http-service", component:ProductListCallHttpServiceComponent},
-  {path:"product-http-handle-error-service", component:ProductHttpHandleErrorServiceComponent},
-  {path:"service-product-image-event", component:ServiceProductImageEventComponent},
-  {path:"service-product-image-event/:id", component:ServiceProductImageEventDetailComponent},
-  {path:"product-catalog", component:ProductCatalogComponent},
+  { path: "binding-property", component: BindingPropertyComponent },
+  { path: "binding-class", component: BindingClassComponent },
+  { path: "binding-style", component: BindingStyleComponent },
+  { path: "contact", component: ContactComponent },
+  { path: "binding-event", component: BindingEventComponent },
+  { path: "binding-2-way", component: BindingTwoWayComponent },
+  { path: "danh-sach-san-pham", component: ProductListComponent },
+  { path: "product-dropdown-list", component: ProductDropdownListComponent },
+  { path: "product-list-call-service", component: ProductListCallServiceComponent },
+  { path: "product-list-call-http-service", component: ProductListCallHttpServiceComponent },
+  { path: "product-http-handle-error-service", component: ProductHttpHandleErrorServiceComponent },
+  { path: "service-product-image-event", component: ServiceProductImageEventComponent },
+  { path: "service-product-image-event/:id", component: ServiceProductImageEventDetailComponent },
+  { path: "product-catalog", component: ProductCatalogComponent },
+  { path: "group-customers", component: GroupCustomersComponent },
 ];
 
 @NgModule({
