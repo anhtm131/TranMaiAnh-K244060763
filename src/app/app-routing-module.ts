@@ -15,6 +15,10 @@ import { ServiceProductImageEventComponent } from './service-product-image-event
 import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail/service-product-image-event-detail';
 import { ProductCatalogComponent } from './product-catalog/product-catalog';
 import { GroupCustomersComponent } from './group-customers/group-customers';
+import { ProductDetailComponent } from './product-detail-component/product-detail-component';
+import { ProductListAdvancedComponent } from './product-list-advanced-component/product-list-advanced-component';
+import { ProductListSearchComponent } from './product-list-search-component/product-list-search-component';
+import { PageNotFoundComponent } from './page-not-found-component/page-not-found-component';
 
 
 const routes: Routes = [
@@ -33,6 +37,20 @@ const routes: Routes = [
   { path: "service-product-image-event/:id", component: ServiceProductImageEventDetailComponent },
   { path: "product-catalog", component: ProductCatalogComponent },
   { path: "group-customers", component: GroupCustomersComponent },
+  { path: "products", component: ProductListAdvancedComponent },
+  { path: "products/:id", component: ProductDetailComponent },
+  { path: "search-product", component: ProductListSearchComponent },
+  { path: "**", component: PageNotFoundComponent },
+  { path: "", component: ContactComponent },
+  {
+    path: "samplenested",
+    component: ProductListAdvancedComponent,
+    children: [
+      { path: "search", component: ProductListSearchComponent },
+      { path: "detail", component: ProductDetailComponent },
+    ]
+  }
+
 ];
 
 @NgModule({
