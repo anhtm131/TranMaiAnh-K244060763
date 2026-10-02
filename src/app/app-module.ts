@@ -10,7 +10,7 @@ import { BindingClassComponent } from './binding-class-component/binding-class-c
 import { BindingStyleComponent } from './binding-style-component/binding-style-component';
 import { BindingEventComponent } from './binding-event-component/binding-event-component';
 import { BindingTwoWayComponent } from './binding-two-way-component/binding-two-way-component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list-component/product-list-component';
 import { FirstComponent } from './first/first';
 import { ProductDropdownListComponent } from './product-dropdown-list-component/product-dropdown-list-component';
@@ -26,6 +26,9 @@ import { ProductDetailComponent } from './product-detail-component/product-detai
 import { ProductListAdvancedComponent } from './product-list-advanced-component/product-list-advanced-component';
 import { ProductListSearchComponent } from './product-list-search-component/product-list-search-component';
 import { PageNotFoundComponent } from './page-not-found-component/page-not-found-component';
+import { CourseRegistrationComponent } from './course-registration-component/course-registration-component';
+import { LoginComponent } from './login-component/login-component';
+import { CourseRegistrationReactiveComponent } from './course-registration-reactive-component/course-registration-reactive-component';
 
 @NgModule({
   declarations: [
@@ -52,8 +55,11 @@ import { PageNotFoundComponent } from './page-not-found-component/page-not-found
     ProductListAdvancedComponent,
     ProductListSearchComponent,
     PageNotFoundComponent,
+    CourseRegistrationComponent,
+    LoginComponent,
+    CourseRegistrationReactiveComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],
 })

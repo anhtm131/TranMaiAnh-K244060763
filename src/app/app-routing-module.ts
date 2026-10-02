@@ -19,6 +19,10 @@ import { ProductDetailComponent } from './product-detail-component/product-detai
 import { ProductListAdvancedComponent } from './product-list-advanced-component/product-list-advanced-component';
 import { ProductListSearchComponent } from './product-list-search-component/product-list-search-component';
 import { PageNotFoundComponent } from './page-not-found-component/page-not-found-component';
+import { authGuard } from './classes/auth.guard';
+import { CourseRegistrationComponent } from './course-registration-component/course-registration-component';
+import { LoginComponent } from './login-component/login-component';
+import { CourseRegistrationReactiveComponent } from './course-registration-reactive-component/course-registration-reactive-component';
 
 
 const routes: Routes = [
@@ -40,8 +44,8 @@ const routes: Routes = [
   { path: "products", component: ProductListAdvancedComponent },
   { path: "products/:id", component: ProductDetailComponent },
   { path: "search-product", component: ProductListSearchComponent },
-  { path: "**", component: PageNotFoundComponent },
   { path: "", component: ContactComponent },
+  { path: "login", component: LoginComponent },
   {
     path: "samplenested",
     component: ProductListAdvancedComponent,
@@ -49,8 +53,16 @@ const routes: Routes = [
       { path: "search", component: ProductListSearchComponent },
       { path: "detail", component: ProductDetailComponent },
     ]
-  }
-
+  },
+  {
+    path: "lazyinfor",
+    loadComponent: () =>
+      import('./lazy-component/lazy-component').then(c => c.LazyComponent),
+    canActivate: [authGuard],
+  },
+  { path: "course-register", component: CourseRegistrationComponent },
+  { path: "course-reactive-register", component: CourseRegistrationReactiveComponent },
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
