@@ -29,6 +29,15 @@ import { PageNotFoundComponent } from './page-not-found-component/page-not-found
 import { CourseRegistrationComponent } from './course-registration-component/course-registration-component';
 import { LoginComponent } from './login-component/login-component';
 import { CourseRegistrationReactiveComponent } from './course-registration-reactive-component/course-registration-reactive-component';
+import { FakeProductComponent } from './fake-product-component/fake-product-component';
+import { FakeProduct2Component } from './fake-product2-component/fake-product2-component';
+import { BooksComponent } from './books-component/books-component';
+import { BookDetailComponent } from './book-detail-component/book-detail-component';
+import { BookNewComponent } from './book-new-component/book-new-component';
+import { BookUpdateComponent } from './book-update-component/book-update-component';
+import { BookDeleteComponent } from './book-delete-component/book-delete-component';
+import { FashionComponent } from './fashion-component/fashion-component';
+import { FashionDetailComponent } from './fashion-detail-component/fashion-detail-component';
 
 @NgModule({
   declarations: [
@@ -58,6 +67,15 @@ import { CourseRegistrationReactiveComponent } from './course-registration-react
     CourseRegistrationComponent,
     LoginComponent,
     CourseRegistrationReactiveComponent,
+    FakeProductComponent,
+    FakeProduct2Component,
+    BooksComponent,
+    BookDetailComponent,
+    BookNewComponent,
+    BookUpdateComponent,
+    BookDeleteComponent,
+    FashionComponent,
+    FashionDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],

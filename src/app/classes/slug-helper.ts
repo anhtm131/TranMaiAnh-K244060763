@@ -1,17 +1,18 @@
 // classes/slug-helper.ts
 //Hàm tạo Slug (Dùng ở cả nơi tạo Link và nơi hiển thị)
-export function createSlug(name: string, id: number): string {
+export function createSlug(name: string, id: number, prefix: string = 'p'): string {
     const sanitizedName = name
         .toLowerCase()
+        .replace(/đ/g, 'd')
         .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Bỏ dấu tiếng Việt
         .replace(/[^a-z0-9]+/g, '-') // Thay ký tự lạ bằng -
         .replace(/(^-|-$)+/g, '');   // Xóa dấu - ở đầu và cuối
-    return `${sanitizedName}-p${id}`; // Format: ten-san-pham-p1
+    return `${sanitizedName}-${prefix}${id}`; // Format: ten-san-pham-p1
 }
 //Hàm tách ID từ Slug (Dùng khi đọc URL)
-export function extractIdFromSlug(slug: string): number | null {
-    // Tìm các chữ số nằm ở cuối chuỗi sau chữ p
-    const match = slug.match(/-p(\d+)$/);
+export function extractIdFromSlug(slug: string, prefix: string = 'p'): number | null {
+    // Tìm các chữ số nằm ở cuối chuỗi sau prefix
+    const match = slug.match(new RegExp(`-${prefix}(\\d+)$`));
     return match ? parseInt(match[1], 10) : null;
 }
 

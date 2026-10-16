@@ -1,0 +1,141 @@
+.detail-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+}
+
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-back {
+  border: none;
+  background: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #555;
+  padding: 6px 0;
+}
+
+.btn-back:hover {
+  color: #000;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  width: 260px;
+  max-width: 100%;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #222;
+}
+
+.search-box button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.message {
+  text-align: center;
+  color: #888;
+  padding: 40px 0;
+}
+
+.error {
+  color: #c0392b;
+}
+
+.fashion-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.detail-image {
+  background: #f2f2f2;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-content {
+  padding: 32px 32px 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detail-style {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #d35400;
+}
+
+.detail-content h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #777;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+  word-break: break-all;
+}
+
+.detail-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .fashion-detail {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .detail-image img {
+    min-height: 250px;
+  }
+
+  .detail-content {
+    padding: 24px;
+  }
+}

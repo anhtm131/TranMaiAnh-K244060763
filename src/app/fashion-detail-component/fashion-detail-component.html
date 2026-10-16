@@ -1,0 +1,36 @@
+<div class="detail-page">
+  <div class="top-bar">
+    <button class="btn-back" (click)="goBack()">&larr; Danh sách</button>
+    <div class="search-box">
+      <input type="text" #keyword placeholder="Nhập IdF hoặc slug..." (keyup.enter)="searchFashion(keyword.value)">
+      <button (click)="searchFashion(keyword.value)">Tìm</button>
+    </div>
+  </div>
+
+  @if (loading()) {
+    <p class="message">Đang tải...</p>
+  }
+
+  @if (errMessage()) {
+    <p class="message error">{{errMessage()}}</p>
+  }
+
+  @if (fashion(); as f) {
+    <article class="fashion-detail">
+      <div class="detail-image">
+        <img [src]="f.getBase64String()" [alt]="f.fashion_subject">
+      </div>
+      <div class="detail-content">
+        <span class="detail-style">{{f.style}}</span>
+        <h1>{{f.fashion_subject}}</h1>
+        <div class="detail-meta">
+          <span><b>IdF:</b> {{f.IdF}}</span>
+          <span><b>Slug:</b> {{f.getSlug()}}</span>
+        </div>
+        <p class="detail-text">{{f.fashion_detail}}</p>
+      </div>
+    </article>
+  } @else if (!hasSlug() && !loading()) {
+    <p class="message">Chọn một Fashion trong danh sách hoặc nhập IdF / slug để xem chi tiết.</p>
+  }
+</div>

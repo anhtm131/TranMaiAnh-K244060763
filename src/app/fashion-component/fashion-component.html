@@ -1,0 +1,37 @@
+<div class="fashion-page">
+  <div class="page-header">
+    <h1>Fashion Collection</h1>
+    <p>{{filteredFashions().length}} bài viết</p>
+  </div>
+
+  <div class="style-filter">
+    @for (style of styles(); track style) {
+      <button [class.active]="style==selectedStyle()" (click)="selectStyle(style)">{{style}}</button>
+    }
+  </div>
+
+  @if (errMessage()) {
+    <p class="error">{{errMessage()}}</p>
+  }
+
+  @if (loading()) {
+    <p class="loading">Đang tải dữ liệu...</p>
+  }
+
+  <div class="fashion-grid">
+    @for (fashion of filteredFashions(); track fashion._id) {
+      <a class="fashion-card" [routerLink]="['/fashion-detail', fashion.getSlug()]">
+        <div class="card-image">
+          <img [src]="fashion.getBase64String()" [alt]="fashion.fashion_subject">
+          <span class="badge-idf">#{{fashion.IdF}}</span>
+        </div>
+        <div class="card-body">
+          <span class="card-style">{{fashion.style}}</span>
+          <h3>{{fashion.fashion_subject}}</h3>
+          <p>{{fashion.fashion_detail}}</p>
+          <span class="card-slug">/{{fashion.getSlug()}}</span>
+        </div>
+      </a>
+    }
+  </div>
+</div>
